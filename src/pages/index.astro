@@ -65,7 +65,7 @@ const posts = [
             <h3><a href={post.href}>{post.title}</a></h3>
             <p>{post.description}</p>
             <p class="article-meta">
-              <time dateTime={post.date}>
+              <time datetime={post.date}>
                 {new Date(post.date).toLocaleDateString('en-GB', { dateStyle: 'long' })}
               </time>
             </p>
