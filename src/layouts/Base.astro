@@ -37,12 +37,14 @@ const currentYear = new Date().getFullYear();
     <meta name="twitter:card" content="summary" />
     <style>
       :root {
-        color-scheme: light;
+        color-scheme: dark;
         --max-width: 880px;
-        --accent: #594fc4;
-        --text: #1f1d29;
-        --muted: #5b556b;
-        --surface: #f9f7ff;
+        --accent: #a99dff;
+        --text: #f5f4ff;
+        --muted: #b8b3d2;
+        --surface: #1f1b33;
+        --surface-muted: #2a2542;
+        --background: #141024;
       }
       *,
       *::before,
@@ -54,7 +56,7 @@ const currentYear = new Date().getFullYear();
         font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         line-height: 1.6;
         color: var(--text);
-        background: #fff;
+        background: var(--background);
       }
       a {
         color: inherit;
@@ -73,14 +75,15 @@ const currentYear = new Date().getFullYear();
         width: auto;
         height: auto;
         padding: 0.5rem 0.75rem;
-        background: #fff;
+        background: var(--surface);
+        color: var(--text);
         border: 2px solid var(--accent);
         border-radius: 0.5rem;
         z-index: 999;
       }
       header {
         background: var(--surface);
-        border-bottom: 1px solid rgba(38, 34, 80, 0.08);
+        border-bottom: 1px solid rgba(169, 157, 255, 0.2);
       }
       .wrap {
         max-width: var(--max-width);
@@ -125,16 +128,23 @@ const currentYear = new Date().getFullYear();
         font-weight: 500;
         padding: 0.35rem 0;
         border-bottom: 2px solid transparent;
+        color: var(--muted);
+      }
+      nav a:hover,
+      nav a:focus-visible {
+        color: var(--text);
+        border-color: rgba(169, 157, 255, 0.4);
       }
       nav a[aria-current='page'] {
+        color: var(--text);
         border-color: var(--accent);
       }
       main {
         padding: 2.5rem 0 3rem;
       }
       footer {
-        background: #f4f2fb;
-        border-top: 1px solid rgba(38, 34, 80, 0.08);
+        background: var(--surface-muted);
+        border-top: 1px solid rgba(169, 157, 255, 0.15);
         padding: 2rem 0;
         font-size: 0.95rem;
         color: var(--muted);
