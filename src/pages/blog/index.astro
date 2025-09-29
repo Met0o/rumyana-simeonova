@@ -1,11 +1,72 @@
 ---
 import Base from '../../layouts/Base.astro';
-const title = 'Blog';
+
+const title = 'Blog — Insights & Practice Notes';
+const description =
+  'Read practice notes, reflections, and wellbeing resources from therapist in training Rumyana Simeonova.';
+const posts = [
+  {
+    title: 'Welcome to the practice',
+    href: '/blog/welcome/',
+    summary: 'What to expect from the blog and how Rumyana approaches therapy, learning, and client care.',
+    date: '2024-07-01',
+  },
+];
 ---
-<Base {title}>
-  <h2>Blog</h2>
-  <p>Articles on mental wellbeing and therapy.</p>
-  <ul>
-    <li><a href="/blog/welcome/">Welcome to the blog</a></li>
-  </ul>
+<Base {title} {description}>
+  <header class="page-header">
+    <h1>Blog</h1>
+    <p>Practice updates, reflections on therapy, and gentle mental health resources for clients and peers.</p>
+  </header>
+
+  <section>
+    <ul class="post-list">
+      {posts.map((post) => (
+        <li>
+          <article>
+            <h2><a href={post.href}>{post.title}</a></h2>
+            <p class="meta">
+              <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-GB', { dateStyle: 'long' })}</time>
+            </p>
+            <p>{post.summary}</p>
+            <p><a class="read-more" href={post.href}>Read article →</a></p>
+          </article>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <style>
+    .page-header {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .post-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 2rem;
+    }
+    article {
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+    .meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0;
+    }
+    .read-more {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .read-more:hover {
+      text-decoration: underline;
+    }
+  </style>
 </Base>

@@ -1,10 +1,52 @@
 ---
-import Base from '../../../layouts/Base.astro';
-const title = 'Welcome to the blog';
+import Base from '../../layouts/Base.astro';
+
+const title = 'Welcome to the practice';
+const description =
+  'An introduction to Rumyana Simeonova’s therapy practice, values, and what future clients can expect from working together.';
+const published = '2024-07-01';
 ---
-<Base {title}>
-  <article>
-    <h1>Welcome</h1>
-    <p>This is a first post. Replace this with real content.</p>
+<Base {title} {description} pageType="article">
+  <article class="post">
+    <header>
+      <h1>{title}</h1>
+      <p class="meta">
+        <time dateTime={published}>{new Date(published).toLocaleDateString('en-GB', { dateStyle: 'long' })}</time>
+      </p>
+    </header>
+    <p>
+      Welcome to this space. I am Rumyana, a therapist in training who believes that therapy can be both gentle and practical.
+      This blog will document my learning journey, share resources that clients often find helpful, and offer glimpses into how
+      I approach collaborative care.
+    </p>
+    <p>
+      Over the coming months I will be completing supervised practice while preparing to open a small online clinic serving
+      clients across Bulgaria and the EU. My work draws on cognitive-behavioural therapy, mindfulness, and compassion-focused
+      approaches. I am particularly interested in supporting people who are managing anxiety, burnout, or major life transitions.
+    </p>
+    <p>
+      If you are considering therapy, I invite you to book a free introductory call. We will get to know one another, discuss
+      what support could look like, and decide whether we want to continue together. There is no obligation to commit and I am
+      happy to suggest other resources if I am not the right fit.
+    </p>
+    <p>
+      Thank you for reading and for trusting me with a small part of your day. I look forward to sharing more reflections,
+      practical exercises, and updates as the practice grows.
+    </p>
   </article>
+
+  <style>
+    .post {
+      display: grid;
+      gap: 1rem;
+    }
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0;
+    }
+  </style>
 </Base>

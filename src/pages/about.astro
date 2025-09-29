@@ -1,8 +1,77 @@
 ---
 import Base from '../layouts/Base.astro';
-const title = 'About';
+
+const title = 'About Rumyana Simeonova';
+const description =
+  'Learn about Rumyana Simeonova’s psychotherapy training, approach, and the values guiding her future private practice.';
 ---
-<Base {title}>
-  <h2>About Rumyana</h2>
-  <p>Therapist in training. This site shares learning notes and resources. Booking will open closer to qualification.</p>
+<Base {title} {description}>
+  <section class="intro">
+    <h1>About Rumyana</h1>
+    <p>
+      I am a therapist in training based in Sofia, Bulgaria, working toward full licensure with a focus on integrative and
+      trauma-informed care. My practice is shaped by humanistic values, respect for neurodiversity, and a belief that change is
+      possible at any stage of life.
+    </p>
+  </section>
+
+  <section class="two-column">
+    <div>
+      <h2>Training &amp; accreditation journey</h2>
+      <ul>
+        <li>Graduate studies in counselling psychology, expected completion 2025.</li>
+        <li>Supervised clinical placement within a community mental health centre.</li>
+        <li>Ongoing CPD in trauma-sensitive mindfulness, CBT, and attachment-based approaches.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Languages &amp; modalities</h2>
+      <p>Sessions will be available in Bulgarian and English.</p>
+      <p>
+        I integrate cognitive-behavioural tools, mindfulness practices, and emotion-focused work depending on your goals. We will
+        regularly review what resonates and adjust together.
+      </p>
+    </div>
+  </section>
+
+  <section class="values">
+    <h2>Guiding values</h2>
+    <ul>
+      <li><strong>Compassion:</strong> warm, non-judgmental spaces where all parts of you are welcome.</li>
+      <li><strong>Curiosity:</strong> collaborative exploration that honours your expertise in your own life.</li>
+      <li><strong>Consent:</strong> clear agreements about pace, topics, and boundaries every step of the way.</li>
+    </ul>
+  </section>
+
+  <style>
+    h1 {
+      font-size: clamp(2rem, 3vw + 1rem, 2.6rem);
+      margin-top: 0;
+    }
+    .intro {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .two-column {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .two-column ul {
+      padding-left: 1.2rem;
+    }
+    .values ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+    @media (min-width: 760px) {
+      .two-column {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
 </Base>

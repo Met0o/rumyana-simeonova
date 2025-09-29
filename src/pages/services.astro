@@ -1,8 +1,109 @@
 ---
 import Base from '../layouts/Base.astro';
-const title = 'Services';
+
+const title = 'Therapy Services';
+const description =
+  'Discover the individual therapy formats Rumyana Simeonova will offer, including online sessions, intro calls, and future group work.';
+const services = [
+  {
+    name: 'Introductory call',
+    detail:
+      'A 20-minute video call to understand your hopes for therapy, answer questions, and agree on next steps.',
+    status: 'Available now (book online)',
+  },
+  {
+    name: 'Individual therapy — 50 minutes',
+    detail:
+      'Weekly or fortnightly sessions delivered online, combining CBT, mindfulness, and emotion-focused work to suit your goals.',
+    status: 'Launching late 2024 (waiting list open)',
+  },
+  {
+    name: 'Focused support package',
+    detail:
+      'A short series of 4 sessions for targeted skills practice around stress, grounding, or transitions.',
+    status: 'In development — register interest',
+  },
+];
 ---
-<Base {title}>
-  <h2>Services</h2>
-  <p>Planned services include individual therapy sessions (online) and consultations. Details will be published upon certification.</p>
+<Base {title} {description}>
+  <header class="page-header">
+    <h1>Services</h1>
+    <p>
+      My aim is to provide flexible, accessible support for individuals navigating change. All offerings are delivered online to
+      reach clients across Bulgaria and the wider EU while I complete supervised practice hours.
+    </p>
+  </header>
+
+  <section>
+    <ul class="service-list">
+      {services.map((service) => (
+        <li>
+          <h2>{service.name}</h2>
+          <p>{service.detail}</p>
+          <p class="status">{service.status}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="cta-block">
+    <h2>Curious whether therapy is right for you?</h2>
+    <p>
+      Start with a relaxed introductory call. We will explore what brings you here and co-create a plan for support. If I am not
+      the best fit, I will suggest alternative resources.
+    </p>
+    <p><a class="cta" href="/booking/">Schedule a call</a></p>
+  </section>
+
+  <style>
+    .page-header {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1.5rem;
+    }
+    .service-list li {
+      border: 1px solid rgba(38, 34, 80, 0.12);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(31, 29, 41, 0.05);
+    }
+    .service-list h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+    .status {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .cta-block {
+      margin-top: 3rem;
+      border-radius: 1.25rem;
+      padding: 2rem;
+      background: var(--surface);
+      border: 1px solid rgba(89, 79, 196, 0.2);
+      text-align: left;
+      display: grid;
+      gap: 1rem;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.25rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
 </Base>

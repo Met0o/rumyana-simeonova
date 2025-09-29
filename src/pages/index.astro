@@ -1,18 +1,180 @@
 ---
 import Base from '../layouts/Base.astro';
-const title = 'Therapy with Rumyana — Blog & Booking';
-const description = 'Compassionate, evidence‑informed therapy. Book a free intro call and explore articles on mental wellbeing.';
+
+const title = 'Therapy with Rumyana Simeonova';
+const description =
+  'Therapist in training offering compassionate, evidence-informed care. Discover focus areas, services, and book a free introductory call.';
+const posts = [
+  {
+    title: 'Welcome to the practice',
+    href: '/blog/welcome/',
+    description: 'How Rumyana approaches therapy, training milestones, and what to expect as services launch.',
+    date: '2024-07-01',
+  },
+];
 ---
 <Base {title} {description}>
-  <section>
-    <h2>Compassionate, evidence‑informed therapy</h2>
-    <p>Rumyana is a therapist in training. Sessions available online in English and Bulgarian once practice begins.</p>
-    <p><a class="cta" href="/booking/">Book an intro call</a></p>
+  <section class="hero">
+    <p class="eyebrow">Rumyana Simeonova · Therapist in training</p>
+    <h1>Supporting your growth with warmth and evidence-based care</h1>
+    <p>
+      I work with adults who are navigating anxiety, burnout, and life transitions. Sessions will be offered online in
+      Bulgarian and English as I complete supervised practice.
+    </p>
+    <p class="cta-row">
+      <a class="cta" href="/booking/">Book an intro call</a>
+      <span class="cta-note">Free 20-minute consultation</span>
+    </p>
   </section>
+
   <section>
-    <h3>Latest articles</h3>
-    <ul>
-      <li><a href="/blog/">Visit the blog →</a></li>
+    <h2>Areas of focus</h2>
+    <ul class="feature-list">
+      <li>
+        <h3>Emotion regulation</h3>
+        <p>Evidence-based tools drawn from CBT and mindfulness to help steady overwhelming feelings.</p>
+      </li>
+      <li>
+        <h3>Burnout &amp; work stress</h3>
+        <p>Support for professionals balancing high expectations, caregiving responsibilities, and rest.</p>
+      </li>
+      <li>
+        <h3>Life transitions</h3>
+        <p>Compassionate accompaniment through relocation, relationship shifts, and identity changes.</p>
+      </li>
     </ul>
   </section>
+
+  <section>
+    <h2>How we can work together</h2>
+    <p>
+      I believe in collaborative, culturally sensitive therapy. You can expect a blend of structured exercises and spacious
+      conversation tailored to your needs. Together we will set goals, review progress, and decide the pacing that feels safe.
+    </p>
+    <p>
+      <a class="link-arrow" href="/services/">Explore planned services →</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>Latest writing</h2>
+    <ul class="article-list">
+      {posts.map((post) => (
+        <li>
+          <article>
+            <h3><a href={post.href}>{post.title}</a></h3>
+            <p>{post.description}</p>
+            <p class="article-meta">
+              <time dateTime={post.date}>
+                {new Date(post.date).toLocaleDateString('en-GB', { dateStyle: 'long' })}
+              </time>
+            </p>
+          </article>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <style>
+    .hero {
+      display: grid;
+      gap: 1rem;
+      padding-bottom: 2rem;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    h1 {
+      font-size: clamp(2rem, 3vw + 1rem, 3rem);
+      line-height: 1.2;
+      margin: 0;
+    }
+    .hero p {
+      margin: 0;
+    }
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.25rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(89, 79, 196, 0.16);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(89, 79, 196, 0.22);
+    }
+    .cta-note {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    section + section {
+      margin-top: 3rem;
+    }
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+    }
+    .feature-list li {
+      padding: 1.5rem;
+      border: 1px solid rgba(38, 34, 80, 0.12);
+      border-radius: 1rem;
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(31, 29, 41, 0.04);
+    }
+    .feature-list h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .article-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1.5rem;
+    }
+    .article-list article {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      background: #fff;
+    }
+    .article-list h3 {
+      margin: 0 0 0.5rem;
+    }
+    .article-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .link-arrow {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .link-arrow:hover {
+      text-decoration: underline;
+    }
+    @media (min-width: 720px) {
+      .feature-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  </style>
 </Base>

@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Contact Rumyana Simeonova';
+const description =
+  'Get in touch with Rumyana Simeonova via a secure Formspree contact form. Please avoid sharing medical or highly sensitive data.';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/your-form-id';
+---
+<Base {title} {description}>
+  <section class="intro">
+    <h1>Contact</h1>
+    <p>
+      Use the form below for general questions about availability, collaboration, or resources. For scheduling, please use the
+      booking page. I aim to respond within two business days.
+    </p>
+    <p class="note">Kindly avoid sharing personal health information or crisis details in this form.</p>
+  </section>
+
+  <section>
+    <form action={FORMSPREE_ENDPOINT} method="POST" class="contact-form">
+      <label>
+        Email
+        <input type="email" name="email" required autocomplete="email" />
+      </label>
+      <label>
+        How can I help?
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+      <label class="sr-only">Leave this field blank
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+      </label>
+      <p class="note">If you are in crisis, contact local emergency services or your nearest support line immediately.</p>
+      <button type="submit">Send message</button>
+    </form>
+  </section>
+
+  <style>
+    .intro {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .note {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+      max-width: 520px;
+    }
+    label {
+      display: grid;
+      gap: 0.35rem;
+      font-weight: 600;
+    }
+    input,
+    textarea,
+    button {
+      font: inherit;
+    }
+    input,
+    textarea {
+      border: 1px solid rgba(31, 29, 41, 0.2);
+      border-radius: 0.6rem;
+      padding: 0.65rem 0.75rem;
+      background: #fff;
+    }
+    textarea {
+      resize: vertical;
+    }
+    button {
+      justify-self: start;
+      padding: 0.65rem 1.5rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .sr-only {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+  </style>
+</Base>

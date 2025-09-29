@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rumyanasimeonova.com/sitemap-index.xml

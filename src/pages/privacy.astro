@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Privacy Policy';
+const description =
+  'Privacy approach for Rumyana Simeonova’s therapy site, covering hosting, booking, contact, and guidance on data handling.';
+---
+<Base {title} {description}>
+  <article class="legal">
+    <h1>Privacy Policy</h1>
+    <p>Last updated: July 2024</p>
+
+    <p>
+      This website introduces the future therapy practice of Rumyana Simeonova. I aim to collect the minimum amount of
+      information necessary to provide useful services. No analytics or advertising cookies are in use.
+    </p>
+
+    <h2>Who is responsible?</h2>
+    <p>
+      The website is managed by Rumyana Simeonova, based in Sofia, Bulgaria. You can contact me via the <a href="/contact/">contact
+      form</a> for any privacy questions.
+    </p>
+
+    <h2>What data is collected?</h2>
+    <ul>
+      <li>
+        <strong>Website hosting:</strong> Pages are served via GitHub Pages. GitHub may log standard technical information such as
+        IP addresses and browser details for security purposes.
+      </li>
+      <li>
+        <strong>Booking:</strong> Introductory calls are scheduled through Calendly. When you book, Calendly collects the details you
+        provide (name, email, availability). Please avoid including sensitive health data in the booking notes.
+      </li>
+      <li>
+        <strong>Contact form:</strong> Messages are sent via Formspree and delivered to my inbox. The form asks for your email address
+        and message so I can respond. Do not share medical information or crisis details.
+      </li>
+    </ul>
+
+    <h2>How is data used?</h2>
+    <p>I use your information solely to respond to enquiries and manage bookings. Data is not sold or shared with advertisers.</p>
+
+    <h2>Data retention</h2>
+    <p>
+      Emails and booking information are retained only for as long as needed to communicate with you or provide services. You may
+      request deletion at any time.
+    </p>
+
+    <h2>Your rights</h2>
+    <p>
+      If you reside in the EU or UK, you have rights to access, correct, or delete your personal data. Contact me to exercise
+      these rights.
+    </p>
+
+    <h2>Updates</h2>
+    <p>
+      This policy may evolve as services expand. Significant changes will be noted on this page with an updated revision date.
+    </p>
+  </article>
+
+  <style>
+    .legal {
+      display: grid;
+      gap: 1rem;
+    }
+    h1 {
+      margin-bottom: 0.25rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+  </style>
+</Base>

@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Terms of Use';
+const description =
+  'Terms of use for rumyanasimeonova.com, outlining acceptable use, booking responsibilities, and contact expectations.';
+---
+<Base {title} {description}>
+  <article class="legal">
+    <h1>Terms of Use</h1>
+    <p>Last updated: July 2024</p>
+
+    <h2>Purpose of this site</h2>
+    <p>
+      This website shares information about the forthcoming therapy services of Rumyana Simeonova. Content is provided for
+      general guidance only and does not constitute medical or psychological advice.
+    </p>
+
+    <h2>Use of the booking tool</h2>
+    <p>
+      The Calendly scheduler is intended for arranging introductory calls and, in the future, therapy sessions. Please ensure the
+      contact details you submit are accurate. You are responsible for rescheduling or cancelling appointments in a timely manner.
+    </p>
+
+    <h2>Contact form</h2>
+    <p>
+      The Formspree contact form is for general enquiries. It must not be used for crisis messages or for sharing sensitive
+      personal health information. In an emergency, contact local services immediately.
+    </p>
+
+    <h2>Intellectual property</h2>
+    <p>
+      All text and design elements on this site are owned by Rumyana Simeonova unless otherwise stated. You may reference content
+      with attribution but not reproduce it for commercial purposes without permission.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      These terms may be updated as services evolve. Continued use of the site after changes indicates acceptance of the revised
+      terms.
+    </p>
+  </article>
+
+  <style>
+    .legal {
+      display: grid;
+      gap: 1rem;
+    }
+    h1 {
+      margin-bottom: 0.25rem;
+    }
+  </style>
+</Base>
