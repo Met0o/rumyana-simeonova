@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+const title = 'Booking';
+---
+<Base {title}>
+  <h2>Book a session</h2>
+  <p>Choose a time that works for you. You’ll receive a confirmation email. For privacy, please avoid sharing sensitive health details here.</p>
+  <!-- Calendly inline widget (replace data-url with your Calendly link) -->
+  <div class="calendly-inline-widget"
+       data-url="https://calendly.com/YOUR_HANDLE/intro"
+       style="min-width:320px;height:800px;"></div>
+  <script type="text/javascript"
+    src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</Base>
