@@ -61,10 +61,11 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/your-form-id';
     }
     input,
     textarea {
-      border: 1px solid rgba(31, 29, 41, 0.2);
+      border: 1px solid rgba(169, 157, 255, 0.35);
       border-radius: 0.6rem;
       padding: 0.65rem 0.75rem;
-      background: #fff;
+      background: var(--surface);
+      color: var(--text);
     }
     textarea {
       resize: vertical;
@@ -75,9 +76,10 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/your-form-id';
       border-radius: 999px;
       border: none;
       background: var(--accent);
-      color: #fff;
+      color: #0b041b;
       font-weight: 600;
       cursor: pointer;
+      box-shadow: 0 10px 24px rgba(9, 6, 32, 0.45);
     }
     .sr-only {
       position: absolute;
